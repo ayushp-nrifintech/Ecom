@@ -5,6 +5,7 @@ import datetime
 
 
 class Order(models.Model):
+    id = models.AutoField(primary_key=True)
     product = models.ForeignKey(Product,
                                 on_delete=models.CASCADE)
     customer = models.ForeignKey(Customer,
@@ -18,6 +19,12 @@ class Order(models.Model):
 
     def placeOrder(self):
         self.save()
+        
+    def __str__(self):
+        status="Pending"
+        if self.status:
+            status="Completed"
+        return str(str(self.id)+"   -Date   -"+str(self.date)+"    -"+status)
 
     @staticmethod
     def get_orders_by_customer(customer_id):

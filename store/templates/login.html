@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-
+{% load static %}
 {% block content %}
 
 <div class="container">
@@ -9,7 +9,7 @@
             <div class="text-center col">
             
                 <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Shopping_cart_with_food_clip_art_2.svg/307px-Shopping_cart_with_food_clip_art_2.svg.png" alt=""
+                src="{% static 'store/images/eshoplogo.png' %}" alt=""
                 class="" style="height: 150px;">
             <!-- <hr> -->
             <div class="display-8">Create An Account</div>
